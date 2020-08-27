@@ -5,9 +5,12 @@ Broken program to determine score status
 
 
 def main():
-    """Get a score and display its status."""
-    score = float(input("Enter score: "))
-    print(determine_status(score))
+    random_scores = int(input("How many random scores: "))
+    for i in range(0, random_scores):
+        import random
+        score = random.randint(0, 100)
+        grade = determine_status(score)
+        print("{} = {}".format(score, grade))
 
 
 def determine_status(score):
@@ -23,4 +26,3 @@ def determine_status(score):
 
 
 main()
-
